@@ -20,11 +20,11 @@ for (i in 1:10000) {
 }
 # plot histogram to see how the observed mean difference is relative to the reshuffled 10000 tests
 hist(test_means)
-abline(v = actual_mean_difference, color = 'red', lty=2)
-abline(v = -actual_mean_difference, color = 'red', lty=2)
+abline(v = actual_mean_difference, col = 'red', lty=2)
+abline(v = -actual_mean_difference, col = 'red', lty=2)
 
 # calculate p value
-right_side = sum(test_mean >= abs(actual_mean_difference))
-left_side = sum(test_mean <= -abs(actual_mean_difference))
+right_side = sum(test_means >= abs(actual_mean_difference))
+left_side = sum(test_means <= -abs(actual_mean_difference))
 p_val = (right_side + left_side)/10000
 
